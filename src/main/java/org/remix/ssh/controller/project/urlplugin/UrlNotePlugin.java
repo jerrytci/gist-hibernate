@@ -20,6 +20,14 @@ public class UrlNotePlugin {
         returnJson(request, response, json);
     }
 
+    @RequestMapping("/save")
+    public void save(HttpServletRequest request, HttpServletResponse response) {
+        String url = request.getParameter("url");
+        String group = request.getParameter("group");
+        String json = "{\"code\": \"成功\",\"url\": " + url +",\"group\": " + group +"}";
+        returnJson(request, response, json);
+    }
+
     public void returnJson(HttpServletRequest request, HttpServletResponse response, String json){
         try{
             response.setContentType("application/json");
