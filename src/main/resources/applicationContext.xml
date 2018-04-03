@@ -33,12 +33,15 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.format_sql">true</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/sshxx</prop>
-                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <prop key="hibernate.dialect">${jdbc.dialect}</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.format_sql">false</prop>
             </props>
+        </property>
+        <property name="packagesToScan">
+            <list>
+                <value>org.remix.ssh.domain</value>
+            </list>
         </property>
         <property name="mappingResources">
             <list>

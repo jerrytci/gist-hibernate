@@ -1,0 +1,7 @@
+CREATE TABLE url
+(
+    id LONG COMMENT 'id,自动增长',
+    title VARCHAR(11) COMMENT '网页标题',
+    tagid LONG COMMENT '标签id',
+    url VARCHAR(11) COMMENT '保存url'
+);

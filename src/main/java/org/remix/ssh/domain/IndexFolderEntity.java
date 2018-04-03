@@ -4,6 +4,7 @@ package org.remix.ssh.domain;
  * Created by astaJerry on 2017/7/25.
  */
 public class IndexFolderEntity {
+
     private int id;
     private String name;
     private int parent;

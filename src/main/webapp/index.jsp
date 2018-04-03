@@ -31,7 +31,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
+<%--<nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Wiki</a>
@@ -62,14 +62,15 @@
             </ul>
         </div>
     </div>
-</nav>
-<div align="center">
+</nav>--%>
+<%--<div align="center">
     <div class="home_main_side" align="center">
         side
     </div>
     <div class="home_main_content" align="center">
         test
     </div>
-</div>
+</div>--%>
+<a href="./urlPlugin/popup.html">urlPlugin</a>
 </body>
 </html>
