@@ -16,7 +16,7 @@ import java.io.PrintWriter;
 public class UrlNotePlugin {
     @RequestMapping("/url")
     public void test(HttpServletRequest request, HttpServletResponse response){
-        String json = "{'code': '成功'}";
+        String json = "{\"code\": \"成功\"}";
         returnJson(request, response, json);
     }
 
