@@ -7,16 +7,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "folder")
 public class Folder {
+    @Id
     private int id;
-    private int parentID;
+    private int parent;
     private String folder;
 
     public Folder() {
     }
 
-    public Folder(int id, int parentID, String folder) {
+    public Folder(int id, int parent, String folder) {
         this.id = id;
-        this.parentID = parentID;
+        this.parent = parent;
         this.folder = folder;
     }
 
@@ -28,12 +29,12 @@ public class Folder {
         this.id = id;
     }
 
-    public int getParentID() {
-        return parentID;
+    public int getParent() {
+        return parent;
     }
 
-    public void setParentID(int parentID) {
-        this.parentID = parentID;
+    public void setParent(int parent) {
+        this.parent = parent;
     }
 
     public String getFolder() {

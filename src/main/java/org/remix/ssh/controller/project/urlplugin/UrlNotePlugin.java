@@ -2,6 +2,7 @@ package org.remix.ssh.controller.project.urlplugin;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.remix.ssh.domain.urlplugin.Folder;
 import org.remix.ssh.domain.urlplugin.Url;
 import org.remix.ssh.service.urlplugin.UrlService;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @Controller
 @RequestMapping("/plugin")
@@ -30,7 +32,7 @@ public class UrlNotePlugin {
         returnJson(request, response, json);
     }
 
-    @RequestMapping(value = "save", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/save", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public ResponseEntity save(HttpServletRequest request, HttpServletResponse response) {
         String title = request.getParameter("title");
         String url = request.getParameter("url");
@@ -42,6 +44,20 @@ public class UrlNotePlugin {
 
         urlServiceImpl.saveUrl(url1, folder);
         String json = "{\"result\": \"suc\"}";
+        return ResponseEntity.ok(json);
+    }
+
+    @RequestMapping(value = "/folder/all", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public ResponseEntity getFolderHierarchy(HttpServletRequest request, HttpServletResponse response) {
+        List<Folder> folders = urlServiceImpl.getAllFolder();
+
+        String json = "{}";
+        if(folders == null){
+            json = "{\"result\": \"suc\"}";
+        }else{
+
+        }
+
         return ResponseEntity.ok(json);
     }
 

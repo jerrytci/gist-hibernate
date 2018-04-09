@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
+
 @Transactional
 @Service
 public class UrlServiceImpl implements UrlService {
@@ -22,5 +24,10 @@ public class UrlServiceImpl implements UrlService {
             urlDaoImpl.saveUrl(url);
         }
         return url;
+    }
+
+    @Override
+    public List<Folder> getAllFolder() {
+        return null;
     }
 }
