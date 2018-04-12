@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>urlPlugin-title</title>
+    <!--bootstrap-->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet">
+	<!--select 插件 select2-->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- Single button -->
+		<div class="btn-group">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				Action <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a href="#">Action</a></li>
+				<li><a href="#">Another action</a></li>
+				<li><a href="#">Something else here</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="#">Separated link</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div>
+		<select class="select2-tag"></select>
+		<select class="select2-subTag"></select>
+	</div>
+
+    <!--bootstrap-->
+    <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.js"></script>
+	<!--select 插件 select2-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+	<script type="text/javascript">
+		var data = [
+            {
+                id: 0,
+                text: 'bug'
+            },
+            {
+                id: 1,
+                text: 'enhancement'
+            },
+            {
+                id: 2,
+                text: 'duplicate'
+            },
+            {
+                id: 3,
+                text: 'invalid'
+            },
+            {
+                id: 4,
+                text: 'wontfix'
+            }
+        ];
+
+        var subData = [
+            {
+                id: 0,
+                text: 'jerry'
+            },
+            {
+                id: 1,
+                text: 'chen'
+            },
+            {
+                id: 2,
+                text: '61'
+            }
+        ];
+
+        var subData2 = [
+            {
+                id: 0,
+                text: 'jerryaaa'
+            },
+            {
+                id: 1,
+                text: 'chen.tc'
+            },
+            {
+                id: 2,
+                text: '4761'
+            }
+        ];
+
+		$(document).ready(function () {
+            var $tag = $(".select2-tag");
+            var $subTag = $(".select2-subTag");
+
+            $tag.on("select2:select",changeSub);
+
+            $tag.select2({
+                /*ajax: {
+                    url: 'https://api.github.com/search/repositories',
+                    dataType: 'json'
+                    // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+                },*/
+                placeholder: "请选择一个标签",
+				data: data,
+				tags: true
+            });
+			
+            $subTag.select2({
+                /*ajax: {
+                    url: 'https://api.github.com/search/repositories',
+                    dataType: 'json'
+                    // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+                },*/
+                placeholder: "请选择一个标签",
+                tags: true
+            });
+
+        });
+
+        function changeSub(msg) {
+            if(msg){
+                $tag.select2({
+                    data: subData
+                });
+            }else {
+                $tag.select2({
+                    data: subData2
+                });
+            }
+        }
+
+        function changeSub (name, evt) {
+            if (!evt) {
+                var args = "{}";
+            } else {
+                var args = JSON.stringify(evt.params, function (key, value) {
+                    if (value && value.nodeName) return "[DOM node]";
+                    if (value instanceof $.Event) return "[$.Event]";
+                    return value;
+                });
+            }
+            var $e = $("<li>" + name + " -> " + args + "</li>");
+            $eventLog.append($e);
+            $e.animate({ opacity: 1 }, 10000, 'linear', function () {
+                $e.animate({ opacity: 0 }, 2000, 'linear', function () {
+                    $e.remove();
+                });
+            });
+        }
+
+		function log(msg) {
+		    if(typeof msg != 'undefined'){
+				console.log("msg: "+ msg);
+			}else{
+		        console.log("yeah");
+			}
+
+        }
+	</script>
+</body>
+</html>
