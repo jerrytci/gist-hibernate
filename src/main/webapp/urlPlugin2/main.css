@@ -12,3 +12,11 @@
 	border: #00bbee;
 	border-width: 1px;
 }
+
+.select2-tag{
+	width: 130px;
+}
+
+.select2-subTag{
+	width: 130px;
+}
