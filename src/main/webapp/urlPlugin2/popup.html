@@ -64,6 +64,8 @@
             for(i in subDatas){
                 if(subDatas[i].id == selectedID){
                     $subTag.val(null).trigger('change');
+
+                    $subTag.empty();
                     $subTag.select2({
                         data: subDatas[i].sub
                     });
