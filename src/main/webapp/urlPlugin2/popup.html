@@ -78,7 +78,7 @@
 
         // 子选择框根据父选择框选择的内容改动而改动
         function changeSub (name, evt) {
-            /*var selectedID = evt.params.data.id;
+            var selectedID = evt.params.data.id;
             for(i in subDatas){
                 if(subDatas[i].id == selectedID){
                     $subTag.val(null).trigger('change');
@@ -87,17 +87,7 @@
                     });
                     return;
                 }
-            }*/
-            if(dataCount%2 == 0) {
-                $subTag.select2({
-                    data: subData1
-                });
-            }else{
-                $subTag.select2({
-                    data: subData2
-                });
             }
-            dataCount++;
         }
 
         function log (name, evt) {

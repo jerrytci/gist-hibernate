@@ -34,36 +34,36 @@ var remoteData = {
 
 var data = [
     {
-        id: 5,
+        id: 21,
         text: 'bug',
         hello: '是的'
     },
     {
-        id: 11,
+        id: 22,
         text: 'enhancement'
     },
     {
-        id: 2,
+        id: 23,
         text: 'duplicate'
     },
     {
-        id: 3,
+        id: 24,
         text: 'invalid'
     },
     {
-        id: 4,
+        id: 25,
         text: 'wontfix'
     }
 ];
 
 var subDataInit = [{
-    id: 1,
+    id: 999,
     text: 'bug'
 }];
 
 var subData1 = [
     {
-        id: 111,
+        id: 1,
         text: 'jerry'
     },
     {
@@ -93,12 +93,12 @@ var subData2 = [
 
 var subData3 = [
     {
-        id: 0,
+        id: 1,
         text: 'bug',
         hello: '是的'
     },
     {
-        id: 1,
+        id: 2,
         text: 'enhancement'
     }
 ];
@@ -120,65 +120,65 @@ var subData4 = [
 
 var subDatas = [
     {
-        id: 5,
+        id: 21,
         text: 'bug',
         sub: [
             {
-                id: 0,
+                id: 1,
                 text: 'jerry'
             },
             {
-                id: 1,
+                id: 2,
                 text: 'chen'
             },
             {
-                id: 2,
+                id: 3,
                 text: '61'
             }
         ]
     },
     {
-        id: 11,
+        id: 22,
         text: 'enhancement',
         sub: [
             {
-                id: 0,
+                id: 4,
                 text: 'jerryaaa'
             },
             {
-                id: 1,
+                id: 5,
                 text: 'chen.tc'
             },
             {
-                id: 2,
+                id: 6,
                 text: '4761'
             }
         ]
     },
     {
-        id: 2,
+        id: 23,
         text: 'duplicate',
         sub: [
             {
-                id: 0,
+                id: 7,
                 text: 'pupu'
             },
             {
-                id: 1,
+                id: 8,
                 text: 'wow'
             },
             {
-                id: 2,
+                id: 9,
                 text: '777'
             }
         ]
     },
     {
-        id: 3,
+        id: 24,
         text: 'invalid'
     },
     {
-        id: 4,
+        id: 25,
         text: 'wontfix'
     }
 ];
