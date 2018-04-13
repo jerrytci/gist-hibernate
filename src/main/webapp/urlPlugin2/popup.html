@@ -84,26 +84,6 @@
                 }
             }
         }
-
-        function log (name, evt) {
-            if (!evt) {
-                var args = "{}";
-            } else {
-                var args = JSON.stringify(evt.params, function (key, value) {
-                    if (value && value.nodeName) return "[DOM node]";
-                    if (value instanceof $.Event) return "[$.Event]";
-                    return value;
-                });
-            }
-            var $e = $("<li>" + name + " -> " + args + "</li>");
-            $div.append($e);
-            $e.animate({ opacity: 1 }, 1000000, 'linear', function () {
-                $e.animate({ opacity: 0 }, 2000, 'linear', function () {
-                    $e.remove();
-                });
-            });
-        }
-
 	</script>
 </body>
 </html>
