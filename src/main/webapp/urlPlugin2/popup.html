@@ -45,88 +45,9 @@
 	<!--select 插件 select2-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
+    <script src="data.js"></script>
 	<script type="text/javascript">
-        var data = [
-            {
-                id: 5,
-                text: 'bug',
-                hello: '是的'
-            },
-            {
-                id: 11,
-                text: 'enhancement'
-            },
-            {
-                id: 2,
-                text: 'duplicate'
-            },
-            {
-                id: 3,
-                text: 'invalid'
-            },
-            {
-                id: 4,
-                text: 'wontfix'
-            }
-        ];
-
-        var subDataInit = [{
-            id: 0,
-            text: 'bug'
-        }];
-
-        var subDatas = [
-            {
-                id: 5,
-                text: 'bug',
-                sub: [
-                    {
-                        id: 0,
-                        text: 'jerry'
-                    },
-                    {
-                        id: 1,
-                        text: 'chen'
-                    },
-                    {
-                        id: 2,
-                        text: '61'
-                    }
-                ]
-            },
-            {
-                id: 11,
-                text: 'enhancement',
-                sub: [
-                    {
-                        id: 0,
-                        text: 'jerryaaa'
-                    },
-                    {
-                        id: 1,
-                        text: 'chen.tc'
-                    },
-                    {
-                        id: 2,
-                        text: '4761'
-                    }
-                ]
-            },
-            {
-                id: 2,
-                text: 'duplicate'
-            },
-            {
-                id: 3,
-                text: 'invalid'
-            },
-            {
-                id: 4,
-                text: 'wontfix'
-            }
-        ];
-
-
+        var dataCount = 1;
 		var $div = $(".log");
 
         var $tag = $(".select2-tag");
@@ -157,15 +78,26 @@
 
         // 子选择框根据父选择框选择的内容改动而改动
         function changeSub (name, evt) {
-            var selectedID = evt.params.data.id;
+            /*var selectedID = evt.params.data.id;
             for(i in subDatas){
                 if(subDatas[i].id == selectedID){
+                    $subTag.val(null).trigger('change');
                     $subTag.select2({
                         data: subDatas[i].sub
                     });
                     return;
                 }
+            }*/
+            if(dataCount%2 == 0) {
+                $subTag.select2({
+                    data: subData1
+                });
+            }else{
+                $subTag.select2({
+                    data: subData2
+                });
             }
+            dataCount++;
         }
 
         function log (name, evt) {
