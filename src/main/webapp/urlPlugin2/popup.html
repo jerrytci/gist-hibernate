@@ -14,7 +14,7 @@
 	<div class="container">
         <div class="btn-group save" role="group" aria-label="...">
             <button type="button" class="btn btn-default account">
-                <span class="glyphicon glyphicon glyphicon-user" aria-hidden="true"> remixchen@qq.com </span>
+                <span class="glyphicon glyphicon glyphicon-user" aria-hidden="true">remixchen@qq.com</span>
             </button>
             <button type="button" class="btn btn-default">取消</button>
             <button type="button" class="btn btn-default">保存</button>
@@ -56,15 +56,15 @@
                     // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
                 },*/
                 placeholder: "请选择一个标签",
-				data: data,
-				tags: true
+				tags: true,
+				data: data
             });
 
 
             $subTag.select2({
                 placeholder: "请选择一个标签",
-                data: subDataInit,
-                tags: true
+                tags: true,
+                data: subDataInit
             });
         });
 
@@ -77,6 +77,7 @@
 
                     $subTag.empty();
                     $subTag.select2({
+                        tags: true,
                         data: subDatas[i].sub
                     });
                     return;
