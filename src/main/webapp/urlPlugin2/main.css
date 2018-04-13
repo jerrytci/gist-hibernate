@@ -1,22 +1,37 @@
 .container {
-	width: 280px;
-	min-height: 280px;
+	width: 290px;
+	min-height: 130px;
 	max-height: 400px;
 	overflow-y: auto;
-	padding: 10px 5px;
-
+	padding: 10px 10px;
 
 	/*开发需要*/
 	float: left;
-	background-color: lightgrey;
+	/*background-color: lightgrey;*/
 	border: #00bbee;
 	border-width: 1px;
 }
 
-.select2-tag{
-	width: 130px;
+.save {
+	margin: 0 0 8px 0;
+	float: right;
 }
 
-.select2-subTag{
-	width: 130px;
+.title {
+	width: 270px;
+	/*上右下左*/
+	margin: 0 0 8px 0;
 }
+
+.select2-tag {
+	width: 133px;
+}
+
+.select2-subTag {
+	width: 133px;
+}
+
+.account {
+	width: 164px;
+}
+
