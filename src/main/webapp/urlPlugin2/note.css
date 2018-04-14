@@ -1,3 +1,8 @@
 .navbar-default {
     width: 300px;
+    height: 25px;
+}
+.list-group-item {
+    padding: 4px 10px 4px 10px;
+    border: 0px;
 }
