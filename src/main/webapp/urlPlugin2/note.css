@@ -1,3 +1,37 @@
+.div-main {
+    background: #99cdff;
+    height: 800px;
+    width: 310px;
+    display:inline;
+    float:left;
+}
+.div-content > div {
+    float: left;
+    width: 300px;
+    overflow: hidden;
+    margin: 1px;
+    height: 1168px;
+}
+.div-content > div > div > div a {
+    height: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    vertical-align: middle;
+    padding: 4px 10px 4px 10px;
+}
+
+.div-module {
+    /*width: 310px;*/
+}
+.div-submodule {
+    margin-left: 5px;
+    /*观感提升*/
+    margin-top: 1px;
+}
+.div-submodule2 {
+    margin-left: 5px;
+}
+
 .navbar-default {
     width: 300px;
     height: 25px;
@@ -6,3 +40,11 @@
     padding: 4px 10px 4px 10px;
     border: 0px;
 }
+.subTag1 {
+    background: #2196f3;
+    color: white;
+}
+.subTag2 {
+    font-weight: bold;
+}
+
