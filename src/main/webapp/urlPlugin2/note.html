@@ -19,12 +19,29 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
 </head>
 <body>
-
 <div class="div-main">
-    目录
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="搜索" aria-describedby="basic-addon1">
+    </div>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default">全部展开</button>
+        <button type="button" class="btn btn-default">全部折叠</button>
+    </div>
+    <div id="tree"></div>
+    <!--
+    <div class="div-module">
+        <li class="list-group-item subTag1">backend</li>
+        <div class="list-group div-submodule2">
+            <a href="#" class="list-group-item">hibernate</a>
+            <a href="#" class="list-group-item">JAVA</a>
+            <a href="#" class="list-group-item">mybatis</a>
+            <a href="#" class="list-group-item">spring</a>
+            <a href="#" class="list-group-item">tool</a>
+        </div>
+    </div>
+    -->
 </div>
 <div class="div-content">
     <div class="div-module">
@@ -53,6 +70,7 @@
                 <a href="#" class="list-group-item">Vestibulum at eros</a>
                 <a href="#" class="list-group-item">jquery在线手册|jQuery API中文手册|jQue...</a>
                 <a href="#" class="list-group-item">jquery在线手册|jQuery API中文手册|jQuery速查表|jQuery参考手册|jQuery API|jQuery在线文档|jQuery最新手册</a>
+
             </div>
         </div>
     </div>
@@ -62,5 +80,14 @@
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--bootstrap-treeview-->
+<script type="text/javascript" src="../frame/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+
+<script type="text/javascript" src="data-note.js"></script>
+<script type="text/javascript" src="note.js"></script>
+<script type="text/javascript">
+
+</script>
 </body>
 </html>

@@ -1,5 +1,4 @@
 .div-main {
-    background: #99cdff;
     height: 800px;
     width: 310px;
     display:inline;
@@ -15,7 +14,6 @@
 .div-content > div > div > div a {
     height: 25px;
     font-size: 12px;
-    font-weight: bold;
     vertical-align: middle;
     padding: 4px 10px 4px 10px;
 }
