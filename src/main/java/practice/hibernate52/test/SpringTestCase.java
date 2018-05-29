@@ -1,4 +1,4 @@
-package org.remix.ssh.test;
+package practice.hibernate52.test;
 
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

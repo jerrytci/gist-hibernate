@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="org.remix.ssh.domain.IndexFolderEntity" table="index_folder" schema="sshxx">
+    <class name="practice.hibernate52.domain.IndexFolderEntity" table="index_folder" schema="sshxx">
         <id name="id" column="id"/>
         <property name="name" column="name"/>
         <property name="parent" column="parent"/>

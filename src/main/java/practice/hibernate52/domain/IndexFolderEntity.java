@@ -1,4 +1,4 @@
-package org.remix.ssh.domain;
+package practice.hibernate52.domain;
 
 /**
  * Created by astaJerry on 2017/7/25.

@@ -1,4 +1,4 @@
-package org.remix.ssh.util;
+package practice.hibernate52.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -42,7 +42,7 @@ public class HibernateUtils {
 /*    public static SessionFactory getSessionFactory(){
         SessionFactory sessionFactory = null;
         // A SessionFactory is set up once for an application!
-        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("applicationContext.xml").build();   // configures settings from hibernate.cfg.xml
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("applicationContext.xml").build();   // configures settings from hibernate52.cfg.xml
         try {
             sessionFactory = new MetadataSources( registry ).buildMetadata().buildSessionFactory();
         }

@@ -1,4 +1,4 @@
-package org.remix.ssh.javaTest;
+package practice.hibernate52.javaTest;
 import java.util.UUID;
 
 public class test {

@@ -1,11 +1,11 @@
-package org.remix.ssh.dao.impl;
+package practice.hibernate52.dao.impl;
 
 import com.google.gson.JsonArray;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.remix.ssh.dao.IndexContentDao;
-import org.remix.ssh.domain.IndexFolderEntity;
-import org.remix.ssh.util.HibernateUtils;
+import practice.hibernate52.dao.IndexContentDao;
+import practice.hibernate52.domain.IndexFolderEntity;
+import practice.hibernate52.util.HibernateUtils;
 import org.springframework.stereotype.Repository;
 
 /**

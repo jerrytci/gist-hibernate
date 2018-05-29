@@ -1,10 +1,10 @@
-package org.remix.ssh.service.impl;
+package practice.hibernate52.service.impl;
 
 import com.google.gson.JsonArray;
-import org.remix.ssh.service.IndexContentService;
+import practice.hibernate52.service.IndexContentService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.remix.ssh.dao.IndexContentDao;
+import practice.hibernate52.dao.IndexContentDao;
 
 import javax.annotation.Resource;
 
