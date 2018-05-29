@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.WebUtils;
 import practice.hibernate52.service.IndexContentService;
 
 import javax.annotation.Resource;
@@ -50,5 +51,16 @@ public class IndexContent {
         String inhere = "in here";
         System.out.println(inhere);
         return null;
+    }
+
+    /**
+     * 应用问题：request 参数传递：如何将一个request携带的参数传递到另外一个request。
+     * 注意：因为request.getParameterMap()是引用类型，所以到下一个request值会发生变化,如果要保存request.getParameterMap()的值，请将值保存到一个新建对象
+     * */
+    public void springWebUtils(HttpServletRequest request, HttpServletResponse response){
+		WebUtils.setSessionAttribute(request, "onlineUpload", request.getParameterMap());
+		WebUtils.setSessionAttribute(request, "onlineUpload", 4396);
+//        result = 4396
+		Object result = WebUtils.getSessionAttribute(request, "onlineUpload");
     }
 }
