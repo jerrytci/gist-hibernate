@@ -4,7 +4,8 @@ import java.util.UUID;
 public class test {
     String haha = "sb";
     public static void main(String[] args) {
-        testParam();
+//        testParam();
+        autoboxing();
     }
 
     public static void uuid(){
@@ -19,5 +20,16 @@ public class test {
 //            String haha = "sb3";  //error
         }
         System.out.println(haha);
+    }
+
+//    拆装箱
+    public static void autoboxing(){
+        Integer i1 = 100;
+        Integer i2 = 100;
+        Integer i3 = 200;
+        Integer i4 = 200;
+
+        System.out.println(i1==i2);
+        System.out.println(i3==i4);
     }
 }
