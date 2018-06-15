@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!--1.1 Spring容器中注册非@controller注解的Bean -->
-    <context:component-scan base-package="org.remix.ssh">
+    <context:component-scan base-package="practice.hibernate52">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -44,6 +44,9 @@
             <list>
                 <value>hibernate/IndexFolderEntity.hbm.xml</value>
             </list>
+        </property>
+        <property name="packagesToScan">
+            <value>practice.hibernate52.domain</value>
         </property>
     </bean>
 

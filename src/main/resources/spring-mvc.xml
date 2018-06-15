@@ -10,7 +10,7 @@
     http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
      <!--SpringMVC容器中只注册带有@controller注解的Bean-->
-    <context:component-scan base-package="org.remix.ssh" use-default-filters="false">
+    <context:component-scan base-package="practice.hibernate52" use-default-filters="false">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
     <!--可以注解bean-->
