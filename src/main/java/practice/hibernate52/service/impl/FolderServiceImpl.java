@@ -8,7 +8,7 @@ import java.util.List;
 
 @Transactional
 @Service
-public class FolderServieImpl implements FolderService{
+public class FolderServiceImpl implements FolderService{
 
     @Override
     public <T> List<T> get(Class<T> tClass) {

@@ -2,6 +2,7 @@ package practice.hibernate52.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +16,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/folder")
 public class FolderC {
+    @Autowired
     @Qualifier("folderServiceImpl2")
-    private FolderService folderserviceimpl21;
+    FolderService folderserviceimpl21;
 
     Gson gson = new Gson();
 
