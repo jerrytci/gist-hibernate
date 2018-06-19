@@ -1,0 +1,12 @@
+hibernate查询的6种方法。分别是1.HQL查询，2.对象化查询Criteria方法，3.动态查询DetachedCriteria，4.例子查询，5.sql查询，6.命名查询
+
+1.导航对象图检索方式。（根据已经加载的对象，导航到其他对象。）
+2.OID检索方式。（按照对象的OID来检索对象。）
+3.HQL检索方式。（使用面向对象的HQL查询语言。）
+4.QBC检索方式。（使用QBC(Qurey By Criteria) API来检索对象。）
+5.本地SQL检索方式。（使用本地数据库的SQL查询语句。）
+
+
+hql查询
+sql查询
+条件查询

@@ -20,4 +20,6 @@ public class FolderDaoImpl2 implements FolderDao {
         Query<T> query = sessionFactory.getCurrentSession().createQuery(sql, clazz);
         return query.list();
     }
+
+
 }
