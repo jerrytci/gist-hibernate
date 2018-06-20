@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Basic CRUD Application - jQuery EasyUI CRUD Demo</title>
+    <title>DMS</title>
     <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="easyui/themes/color.css">
@@ -16,7 +16,7 @@
     <div data-options="region:'west',title:'&nbsp',split:true" style="width:200px;">
         <div class="easyui-accordion">
             <div title="Folder" style="overflow:auto;padding:10px;">
-                <ul class="easyui-tree">
+                <ul id="folder" class="easyui-tree">
 
                 </ul>
             </div>
@@ -32,5 +32,48 @@
     </div>
     <div data-options="region:'center',title:'&nbsp'" style="padding:5px;background:#eee;"></div>
 </div>
+<script type="text/javascript">
+    var iid = "#";
+    var icls = ".";
+
+    var ifolder = "folder";
+
+    var url =  "/folder/init";
+    var url2 =  "/folder/get";
+    var folder = $(iid+ifolder).tree({
+        url : url,
+        lines : true,
+        onBeforeExpand:function(node){
+            var a = url2 + "?" + "folderID=" +node.id;
+            // var a = url2 + "/" +node.id;
+            $(iid+ifolder).tree('options').url = a;
+        },
+        onClick: function (node) {
+
+        },
+        onDblClick : function(node){
+            if (node.state == 'closed') {
+                $(this).tree('expandAll', node.target);
+            } else {
+                $(this).tree('collapseAll', node.target);
+            }
+        },
+        onContextMenu: function(e,node){
+            // todo 添加右键菜单
+        },
+        onBeforeLoad: function(node, param) {
+            if(folder){
+                // $.messager.progress({
+                //     title : '',
+                //     text : 'Loading....'
+                // });
+            }
+        },
+        onLoadSuccess : function(n, data) {
+            // $.messager.progress('close');
+        }
+    });
+
+</script>
 </body>
 </html>

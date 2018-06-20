@@ -10,7 +10,17 @@ import java.util.List;
 public class FolderDaoImpl implements FolderDao {
 
     @Override
-    public <T> List<T> get(Class<T> clazz) {
+    public <T> T get(Class<T> tClass, long id) {
+        return null;
+    }
+
+    @Override
+    public <T> List<T> get(Class<T> tClass) {
+        return null;
+    }
+
+    @Override
+    public <T> List<T> get(Class<T> tClass, List ids) {
         return null;
     }
 }

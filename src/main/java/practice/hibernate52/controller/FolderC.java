@@ -1,17 +1,22 @@
 package practice.hibernate52.controller;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import practice.hibernate52.domain.Folder;
 import practice.hibernate52.service.FolderService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
+
 
 @Controller
 @RequestMapping("/folder")
@@ -24,17 +29,62 @@ public class FolderC {
 
     public static final String UTF_8 = "UTF-8";
 
-    @RequestMapping(value = "/get")
+    @RequestMapping(value = "/init")
     public void get(HttpServletRequest request, HttpServletResponse response) {
-        List<Folder> url2s = folderserviceimpl21.get(Folder.class);
-        returnResult(url2s, response);
+        List rootFolder = new ArrayList();
+        rootFolder.add(1L);
+        rootFolder.add(2L);
+
+        List<Folder> folders = folderserviceimpl21.get(Folder.class, rootFolder);
+
+        JsonArray folderTree = new JsonArray();
+        JsonObject fPublic = new JsonObject();
+        fPublic.addProperty("id", 1);
+        fPublic.addProperty("text", "public");
+        fPublic.addProperty("state", "closed");
+
+        JsonObject fPrivate = new JsonObject();
+        fPrivate.addProperty("id", 2);
+        fPrivate.addProperty("text", "private");
+        fPrivate.addProperty("state", "closed");
+
+        folderTree.add(fPublic);
+        folderTree.add(fPrivate);
+
+        writeResponse(folderTree.toString(), response);
     }
 
-    @RequestMapping(value = "/get3")
-    public void get3(HttpServletRequest request, HttpServletResponse response) {
-        List<Folder> folders = folderserviceimpl21.get(Folder.class);
-        returnResult(folders, response);
+    @RequestMapping(value = "/get")
+    public void get2(HttpServletRequest request, HttpServletResponse response, Long folderID) {
+        if(folderID == null){
+            return;
+        }
+
+        Folder folder = folderserviceimpl21.get(Folder.class, folderID);
+
+
+        JsonArray folderTree = new JsonArray();
+        JsonObject fPublic = new JsonObject();
+        fPublic.addProperty("id", 1);
+        fPublic.addProperty("text", "public");
+        fPublic.addProperty("state", "closed");
+
+        JsonObject fPrivate = new JsonObject();
+        fPrivate.addProperty("id", 2);
+        fPrivate.addProperty("text", "private");
+        fPrivate.addProperty("state", "closed");
+
+        folderTree.add(fPublic);
+        folderTree.add(fPrivate);
+
+        writeResponse(folderTree.toString(), response);
     }
+
+    @RequestMapping(value = "/get/{folderID}")
+    public void get3(HttpServletRequest request, HttpServletResponse response, @PathVariable Long folderID) {
+        return;
+    }
+
 
     public <T> void returnResult(List<T> datas, HttpServletResponse response){
         if(datas != null || datas.size() != 0){
