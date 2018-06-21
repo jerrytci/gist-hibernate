@@ -32,6 +32,7 @@ public class FolderC {
     Gson gson = new Gson();
 
     public static final String UTF_8 = "UTF-8";
+    public static final String CLOSED = "closed";
 
     @RequestMapping(value = "/init")
     public void get(HttpServletRequest request, HttpServletResponse response) {
@@ -39,24 +40,8 @@ public class FolderC {
         rootFolder.add(1L);
         rootFolder.add(2L);
 
-//        List<Folder> folders = folderserviceimpl21.get(rootFolder);
         List<Folder> folders = basicService.get(Folder.class, rootFolder);
-
-        JsonArray folderTree = new JsonArray();
-        JsonObject fPublic = new JsonObject();
-        fPublic.addProperty("id", 1);
-        fPublic.addProperty("text", "public");
-        fPublic.addProperty("state", "closed");
-
-        JsonObject fPrivate = new JsonObject();
-        fPrivate.addProperty("id", 2);
-        fPrivate.addProperty("text", "private");
-        fPrivate.addProperty("state", "closed");
-
-        folderTree.add(fPublic);
-        folderTree.add(fPrivate);
-
-        writeResponse(folderTree.toString(), response);
+        return2(folders, response);
     }
 
     @RequestMapping(value = "/get")
@@ -66,23 +51,9 @@ public class FolderC {
         }
 
         String hql = "from Folder where parentid = "+ folderID;
+
         List<Folder> folders = basicService.get(hql);
-
-        JsonArray folderTree = new JsonArray();
-        JsonObject fPublic = new JsonObject();
-        fPublic.addProperty("id", 1);
-        fPublic.addProperty("text", "public");
-        fPublic.addProperty("state", "closed");
-
-        JsonObject fPrivate = new JsonObject();
-        fPrivate.addProperty("id", 2);
-        fPrivate.addProperty("text", "private");
-        fPrivate.addProperty("state", "closed");
-
-        folderTree.add(fPublic);
-        folderTree.add(fPrivate);
-
-        writeResponse(folderTree.toString(), response);
+        return2(folders, response);
     }
 
     @RequestMapping(value = "/get/{folderID}")
@@ -90,6 +61,22 @@ public class FolderC {
         return;
     }
 
+    public <T> void return2(List<Folder> folders, HttpServletResponse response){
+        if(folders != null || folders.size() != 0) {
+            JsonArray folderTree = new JsonArray();
+            for (int i = 0; i < folders.size(); i++) {
+                JsonObject node = new JsonObject();
+                node.addProperty("id", folders.get(i).getId());
+                node.addProperty("text", folders.get(i).getName());
+                node.addProperty("state", CLOSED);
+
+                folderTree.add(node);
+            }
+            writeResponse(folderTree.toString(), response);
+        }else{
+//            no data
+        }
+    }
 
     public <T> void returnResult(List<T> datas, HttpServletResponse response){
         if(datas != null || datas.size() != 0){
