@@ -6,11 +6,11 @@ import com.google.gson.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import practice.hibernate52.domain.Folder;
-import practice.hibernate52.service.FolderService;
+import practice.hibernate52.service.BasicService;
+import practice.hibernate52.service.impl.FolderServiceImpl2;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +23,11 @@ import java.util.List;
 public class FolderC {
     @Autowired
     @Qualifier("folderServiceImpl2")
-    FolderService folderserviceimpl21;
+//    FolderService folderserviceimpl21;
+    FolderServiceImpl2 folderserviceimpl21;
+
+    @Autowired
+    BasicService basicService;
 
     Gson gson = new Gson();
 
@@ -35,7 +39,8 @@ public class FolderC {
         rootFolder.add(1L);
         rootFolder.add(2L);
 
-        List<Folder> folders = folderserviceimpl21.get(Folder.class, rootFolder);
+//        List<Folder> folders = folderserviceimpl21.get(rootFolder);
+        List<Folder> folders = basicService.get(Folder.class, rootFolder);
 
         JsonArray folderTree = new JsonArray();
         JsonObject fPublic = new JsonObject();
@@ -60,8 +65,8 @@ public class FolderC {
             return;
         }
 
-        Folder folder = folderserviceimpl21.get(Folder.class, folderID);
-
+        String hql = "from Folder where parentid = "+ folderID;
+        List<Folder> folders = basicService.get(hql);
 
         JsonArray folderTree = new JsonArray();
         JsonObject fPublic = new JsonObject();

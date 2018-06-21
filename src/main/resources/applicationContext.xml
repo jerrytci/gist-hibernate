@@ -36,7 +36,7 @@
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/sshxx</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/dms2jerry</prop>
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
             </props>
         </property>

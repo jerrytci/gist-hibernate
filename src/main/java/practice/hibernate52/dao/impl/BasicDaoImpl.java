@@ -1,26 +1,28 @@
 package practice.hibernate52.dao.impl;
 
 import org.springframework.stereotype.Repository;
-import practice.hibernate52.dao.FolderDao;
+import practice.hibernate52.dao.BasicDao;
 
 import java.util.List;
 
 
 @Repository
-public class FolderDaoImpl implements FolderDao {
+//public class BasicDaoImpl implements BasicDao {
+public class BasicDaoImpl{
 
-    @Override
     public <T> T get(Class<T> tClass, long id) {
         return null;
     }
 
-    @Override
     public <T> List<T> get(Class<T> tClass) {
         return null;
     }
 
-    @Override
     public <T> List<T> get(Class<T> tClass, List ids) {
+        return null;
+    }
+
+    public <T> List<T> getHqlResult(String hql) {
         return null;
     }
 }
