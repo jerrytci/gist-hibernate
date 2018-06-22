@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>LayIM 3.x PC版本地演示</title>
 
-    <link rel="stylesheet" href="../dist/css/layui.css">
+    <link rel="stylesheet" href="layim-v3.7.7/dist/css/layui.css">
     <style>
         html{background-color: #333;}
     </style>
@@ -13,7 +13,7 @@
 <body>
 
 
-<script src="../dist/layui.js"></script>
+<script src="layim-v3.7.7/dist/layui.js"></script>
 <script>
 
     if(!/^http(s*):\/\//.test(location.href)){
@@ -40,7 +40,7 @@
 
             //初始化接口
             init: {
-                url: 'json/getList.json'
+                url: 'layim-v3.7.7/示例/json/getList.json'
                 ,data: {}
             }
 
@@ -62,7 +62,7 @@
 
             //查看群员接口
             ,members: {
-                url: 'json/getMembers.json'
+                url: 'layim-v3.7.7/示例/json/getMembers.json'
                 ,data: {}
             }
 

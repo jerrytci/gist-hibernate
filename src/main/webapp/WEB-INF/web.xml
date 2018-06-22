@@ -4,10 +4,10 @@
   <display-name>Archetype Created Web Application</display-name>
   <!-- 起始欢迎界面 -->
   <welcome-file-list>
+    <welcome-file>index-websocket.html</welcome-file>
     <welcome-file>index-layim-demo.html</welcome-file>
     <welcome-file>index-layim.html</welcome-file>
     <welcome-file>index-dms2jerry.html</welcome-file>
-    <!--<welcome-file>index.html</welcome-file>-->
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 
