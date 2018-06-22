@@ -10,7 +10,9 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
-import net.sf.json.JSONObject;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 @ServerEndpoint("/LL_ws/{userName}")
 public class LLWebSocket {
@@ -42,11 +44,11 @@ public class LLWebSocket {
     	String userName=mapSU.get(session);
     	if(userName!=null&&userName!=""){
         	//下线通知
-        	JSONObject jsonObject=new JSONObject();
-        	jsonObject.put("type", 3);
-        	jsonObject.put("userName", userName);
-        	jsonObject.put("contentType", "offline");
-        	jsonObject.put("to", "all");
+        	JsonObject jsonObject=new JsonObject();
+        	jsonObject.addProperty("type", 3);
+        	jsonObject.addProperty("userName", userName);
+        	jsonObject.addProperty("contentType", "offline");
+        	jsonObject.addProperty("to", "all");
         	String jsonString=jsonObject.toString();
         	for(Session s:session.getOpenSessions()){//循环发给所有在线的人
     			s.getAsyncRemote().sendText(jsonString);
@@ -62,15 +64,16 @@ public class LLWebSocket {
      */
 	@OnMessage
     public void onMessage(String message,Session session) {
-        //System.out.println("来自客户端的消息:" + message); 
-        JSONObject jsonObject=JSONObject.fromObject(message);
-        int type = jsonObject.getInt("type");
-        String to=jsonObject.getString("to");
+        //System.out.println("来自客户端的消息:" + message);
+		Gson gson = new Gson();
+        JsonObject jsonObject=gson.fromJson(message, JsonObject.class);
+        int type = jsonObject.get("type").getAsInt();
+        String to=jsonObject.get("to").getAsString();
         jsonObject.remove("to");
         if(type==0||to==null||to==""){return ;}
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String time=df.format(new Date());// new Date()为获取当前系统时间
-        jsonObject.put("time", time);
+        jsonObject.addProperty("time", time);
  
       switch (type) {
 		case 1://单聊
