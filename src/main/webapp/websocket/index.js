@@ -3,9 +3,13 @@ var userArray=new Array();
 var userOnlineStr="";
 var onlineCount=0;
 var k=2;//1单聊  2群聊
- 
-//var host="ws://10.144.238.15:8080/starcLL/LL_ws/"+uname+"_"+sid;
- 
+
+
+var uname = "jerry";
+var sid = 1;
+// var host="ws://10.144.238.15:8080/starcLL/LL_ws/"+uname+"_"+sid;
+var host="ws://localhost:8080/LL_ws/"+uname+"_"+sid;
+
 
 var ws = "";
 if ('WebSocket' in window) {  
@@ -558,11 +562,11 @@ function getUserList(){
 }
 	
 /*表情插件*/
-$('.emoji').qqFace({
+/*$('.emoji').qqFace({
 		id : 'facebox', 
 		assign:'inp_say', 
 		path:'static/emotion/'	//表情存放的路径
-});
+});*/
 
 //讨论组文件
 $(".file-btn").click(function(){
@@ -578,6 +582,8 @@ $("#msg_clear").click(function(){
 	});
 })
 //获取未读消息总数
+// todo
+var basePath = ""
 function getUnreadRecord(){
 	$.post(basePath+"qunController/getUnreadRecord",{"siteId":sid,"timeLong":localStorage.getItem("newReadTime_"+uname)},function(result){
 		//console.log(result);

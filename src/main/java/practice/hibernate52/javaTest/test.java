@@ -4,8 +4,7 @@ import java.util.UUID;
 public class test {
     String haha = "sb";
     public static void main(String[] args) {
-//        testParam();
-        autoboxing();
+        getUUID32();
     }
 
     public static void uuid(){
@@ -31,5 +30,9 @@ public class test {
 
         System.out.println(i1==i2);
         System.out.println(i3==i4);
+    }
+
+    public static void getUUID32(){
+        System.out.println(UUID.randomUUID().toString().replace("-", "").toLowerCase() );
     }
 }

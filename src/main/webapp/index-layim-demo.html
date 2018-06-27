@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>LayIM 3.x PC版本地演示</title>
-
     <link rel="stylesheet" href="layim-v3.7.7/dist/css/layui.css">
+    <script rel="script" type="text/javascript" src="websocket/dev.js"></script>
+    <script src="layim-v3.7.7/dist/layui.js"></script>
+
     <style>
         html{background-color: #333;}
     </style>
 </head>
 <body>
 
-
-<script src="layim-v3.7.7/dist/layui.js"></script>
 <script>
 
     if(!/^http(s*):\/\//.test(location.href)){
@@ -187,6 +187,7 @@
                 });*/
 
             }, 3000);
+
         });
 
         //监听发送消息
