@@ -1,10 +1,11 @@
 package practice.hibernate52.javaTest;
+import java.net.URLDecoder;
 import java.util.UUID;
 
 public class test {
     String haha = "sb";
     public static void main(String[] args) {
-        getUUID32();
+        asciiToString2();
     }
 
     public static void uuid(){
@@ -34,5 +35,24 @@ public class test {
 
     public static void getUUID32(){
         System.out.println(UUID.randomUUID().toString().replace("-", "").toLowerCase() );
+    }
+
+    public static String asciiToString(String value) {
+        StringBuffer sbu = new StringBuffer();
+        String[] chars = value.split(",");
+        for (int i = 0; i < chars.length; i++) {
+            sbu.append((char) Integer.parseInt(chars[i]));
+        }
+        return sbu.toString();
+    }
+
+    public static void asciiToString2() {
+        try{
+            String value = "%26";
+            String a = URLDecoder.decode(value, "utf-8");
+            System.out.println(a);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery/jquery-1.11.3.min.js"></script>
+    <style rel="stylesheet">
+        .select-editable {
+            position:relative;
+            background-color:white;
+            border:solid grey 1px;
+            width:120px;
+            height:18px;
+        }
+        .select-editable select {
+            position:absolute;
+            top:0px;
+            left:0px;
+            font-size:14px;
+            border:none;
+            width:120px;
+            margin:0;
+        }
+        .select-editable input {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width:100px;
+            padding:1px;
+            font-size:12px;
+            border:none;
+        }
+        .select-editable select:focus, .select-editable input:focus {
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+<div class="select-editable">
+    <select onchange="this.nextElementSibling.value=this.value">
+        <option value=""></option>
+        <option value="115x175 mm">115x175 mm</option>
+        <option value="120x160 mm">120x160 mm</option>
+        <option value="120x287 mm">120x287 mm</option>
+    </select>
+    <input type="text" name="format" value="" />
+</div>
+
+
+<!--2-->
+<div>
+    <select id="online-upload-have-profile">
+        <option>Null</option>
+        <option>Credentials</option>
+        <option>Designs</option>
+        <option>Projects</option>
+    </select>
+    <select id="online-upload-no-have-profile">
+        <option>Null</option>
+        <option>Credentials</option>
+        <option>Legal Documents</option>
+    </select>
+</div>
+<script type="text/javascript">
+    // a不是引用类型，当select改变时，a的值不会跟着改变
+    var a = $(".select-editable select option:selected");
+    var b = $("#online-upload-have-profile option:selected");
+    // c是引用类型
+    var c = $("input[name|='format']");
+
+    var a1 = a.text();
+    var b1 = b.text();
+    var c1 = c.text();
+</script>
+</body>
+</html>
