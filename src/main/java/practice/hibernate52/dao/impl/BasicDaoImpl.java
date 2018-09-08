@@ -1,7 +1,6 @@
 package practice.hibernate52.dao.impl;
 
 import org.springframework.stereotype.Repository;
-import practice.hibernate52.dao.BasicDao;
 
 import java.util.List;
 

@@ -1,10 +1,10 @@
 package practice.hibernate52.service.impl;
 
 import com.google.gson.JsonArray;
-import practice.hibernate52.service.IndexContentService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import practice.hibernate52.dao.IndexContentDao;
+import practice.hibernate52.service.IndexContentService;
 
 import javax.annotation.Resource;
 

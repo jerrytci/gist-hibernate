@@ -3,10 +3,10 @@ package practice.hibernate52.dao.impl;
 import com.google.gson.JsonArray;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 import practice.hibernate52.dao.IndexContentDao;
 import practice.hibernate52.domain.IndexFolderEntity;
 import practice.hibernate52.util.HibernateUtils;
-import org.springframework.stereotype.Repository;
 
 /**
  * Created by astaJerry on 2017/7/24.
