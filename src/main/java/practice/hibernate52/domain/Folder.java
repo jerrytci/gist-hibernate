@@ -1,10 +1,9 @@
 package practice.hibernate52.domain;
 
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
-import org.springframework.context.annotation.Lazy;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name = "folder")
@@ -12,10 +11,10 @@ public class Folder {
 
     @Id
     private long id;
+    private long parent;
     private String name;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parentid")
-    private Folder parent;
+    private Date date_added;
+    private Date date_modified;
 
     public long getId() {
         return id;
@@ -25,6 +24,13 @@ public class Folder {
         this.id = id;
     }
 
+    public long getParent() {
+        return parent;
+    }
+
+    public void setParent(long parent) {
+        this.parent = parent;
+    }
 
     public String getName() {
         return name;
@@ -34,12 +40,20 @@ public class Folder {
         this.name = name;
     }
 
-    public Folder getParent() {
-        return parent;
+    public Date getDate_added() {
+        return date_added;
     }
 
-    public void setParent(Folder parent) {
-        this.parent = parent;
+    public void setDate_added(Date date_added) {
+        this.date_added = date_added;
+    }
+
+    public Date getDate_modified() {
+        return date_modified;
+    }
+
+    public void setDate_modified(Date date_modified) {
+        this.date_modified = date_modified;
     }
 }
 

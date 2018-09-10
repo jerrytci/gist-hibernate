@@ -9,4 +9,7 @@ public interface FolderService{
     public Folder getSub(Class<Folder> folderClass, long id);
     public List<Folder> get(Class<Folder> folderClass);
     public List<Folder> get(Class<Folder> folderClass, List ids);
+
+
+    void saveFolder(List<Folder> folders);
 }
