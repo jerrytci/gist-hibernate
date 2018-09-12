@@ -57,7 +57,7 @@ public class HibernateUtils {
 
     public static SessionFactory getSessionFactory()
     {
-        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("applicationContext.xml").build();
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure("basic/applicationContext.xml").build();
         try {
             sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
         } catch (Exception e) {
